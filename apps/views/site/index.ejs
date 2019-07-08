@@ -1,0 +1,40 @@
+<% include layout/header%>              
+                <!--	Feature Product	-->
+                <div class="products">
+                    <h3>Sản phẩm nổi bật</h3>
+                    <%for(key in data.productFeatured){%>               
+                        <%if(data.start ==1){%>
+                            <div class="product-list card-deck">     
+                        <%}%>    
+                        <div class="product-item card text-center">
+                            <a href="#"><img src="/static/images/products/<%=data.productFeatured[key].prd_image%>"></a>
+                            <h4><a href="#"><%=data.productFeatured[key].prd_name%></a></h4>
+                            <p>Giá Bán: <span><%=data.productFeatured[key].prd_price%></span></p>
+                        </div>
+                        <%if(data.start ==3){%>
+                    </div>
+                    <%data.start=0}data.start++%>
+                    <%}%>
+                </div>
+                <!--	End Feature Product	-->
+                
+                
+                <!--	Latest Product	-->
+                <div class="products">
+                    <h3>Sản phẩm mới</h3>
+                    <%for(key in data.productLastest){%>               
+                        <%if(data.start ==1){%>
+                            <div class="product-list card-deck">     
+                        <%}%>    
+                        <div class="product-item card text-center">
+                            <a href="#"><img src="/static/images/products/<%=data.productLastest[key].prd_image%>"></a>
+                            <h4><a href="#"><%=data.productLastest[key].prd_name%></a></h4>
+                            <p>Giá Bán: <span><%=data.productLastest[key].prd_price%></span></p>
+                        </div>
+                        <%if(data.start ==3){%>
+                    </div>
+                    <%data.start=0}data.start++%>
+                    <%}%>
+                </div>
+                <!--	End Latest Product	-->
+<% include layout/footer%>                
